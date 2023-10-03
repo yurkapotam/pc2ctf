@@ -1,19 +1,13 @@
 {
-  "Name": "TDM",
-  "Description": "Team Death Match. Битва двух команд",
+  "Name": "CTF",
+  "Description": "Захват флага. Возьмите вражеский флаг и принесите к своему"
   "StartClientVersion": 334,
   "MapFilter": {
     "IsBlank": false,
     "HasParcourEnd": false
   },
   "MapLists": [
-    {
-      "MapListId": 324,
-      "Name": "Официальные карты"
-    },
-    {
-      "MapListId": 581
-    }
+    
   ],
   "Parameters": {
     "Bool": [
