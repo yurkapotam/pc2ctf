@@ -18,23 +18,6 @@
   "Parameters": {
     "Bool": [
       {
-        "Name": "MapRotation",
-        "DisplayName": "GmParams/MapRotation",
-        "Default": true
-      },
-      {
-        "Name": "OnlyKnives",
-        "DisplayName": "GmParams/OnlyKnives"
-      },
-      {
-        "Name": "PartialDesruction",
-        "DisplayName": "GmParams/PartialDesruction"
-      },
-      {
-        "Name": "LoosenBlocks",
-        "DisplayName": "GmParams/LoosenBlocks"
-      },
-      {
         "Name": "FriendlyFire",
         "DisplayName": "GmParams/FriendlyFire"
       }
