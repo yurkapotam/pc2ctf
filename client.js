@@ -13,11 +13,11 @@ var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
 
 Damage.OnDeath.Add(function(ply) {
-    if (ply.IdInRoom == RedFlagCarrier)
+    if (ply.IdInRoom == RedFlagCarrier && RedFlagCarried)
     {
         RedFlagCarried = false;
     }
-    else if (ply.IdInRoom == BlueFlagCarrier)
+    else if (ply.IdInRoom == BlueFlagCarrier && BlueFlagCarried)
     {
         BlueFlagCarried = false;
     }
