@@ -36,11 +36,11 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
 
 Damage.OnDeath.Add(function (player) {
 	++player.Properties.Deaths.Value;
-})
+});
 
 Damage.OnKill.Add(function (player} {
 	++player.Properties.Kills.Value;
-})
+});
 
 var defView = AreaViewService.GetContext().Get("BlueFlagView");
 defView.color={b:1};
