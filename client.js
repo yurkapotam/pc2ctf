@@ -28,3 +28,11 @@ Teams.OnRequestJoinTeam.Add(function(player, team) {
 Teams.OnPlayerChangeTeam.Add(function(player) {
     player.Spawns.Spawn();
 });
+
+Damage.OnDeath.Add(function (player) {
+	++player.Properties.Deaths.Value;
+})
+
+Damage.OnKill.Add(function (player} {
+	++player.Properties.Kills.Value;
+})
