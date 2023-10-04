@@ -1,6 +1,6 @@
 {
   "Name": "CTF",
-  "Description": "Захват флага. Возьмите вражеский флаг и принесите к своему"
+  "Description": "Захват флага. Возьмите вражеский флаг и принесите к своему",
   "StartClientVersion": 334,
   "MapFilter": {
     "IsBlank": false,
