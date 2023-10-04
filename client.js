@@ -8,6 +8,19 @@ Teams.Add("Blue", "Teams/Blue", {b: 1});
 var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
 
+LeaderBoard.PlayerLeaderBoardValues = [
+	{
+		Value: "Kills",
+		DisplayName: "Фраги",
+		ShortDisplayName: "Фраги"
+	},
+	{
+		Value: "Deaths",
+		DisplayName: "Смерти",
+		ShortDisplayName: "Смерти"
+	}
+];
+
 Teams.OnRequestJoinTeam.Add(function(player, team) {
     team.Add(player);
 });
