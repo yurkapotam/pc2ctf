@@ -9,21 +9,21 @@ var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
 
 LeaderBoard.PlayerLeaderBoardValues = [
-	{
-		Value: "Kills",
-		DisplayName: "Фраги",
-		ShortDisplayName: "Фраги"
-	},
-	{
-		Value: "Deaths",
-		DisplayName: "Смерти",
-		ShortDisplayName: "Смерти"
-	},
-	{
+    {
+        Value: "Kills",
+        DisplayName: "Фраги",
+        ShortDisplayName: "Фраги"
+    },
+    {
+        Value: "Deaths",
+        DisplayName: "Смерти",
+        ShortDisplayName: "Смерти"
+    },
+    {
         Value: "FlagCarrier",
-		DisplayName: "Носитель флага",
-		ShortDisplayName: "Носитель флага"
-	}
+        DisplayName: "Носитель флага",
+        ShortDisplayName: "Носитель флага"
+    }
 ];
 
 Teams.OnRequestJoinTeam.Add(function(player, team) {
@@ -35,11 +35,11 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
 });
 
 Damage.OnDeath.Add(function (player) {
-	++player.Properties.Deaths.Value;
+    ++player.Properties.Deaths.Value;
 });
 
 Damage.OnKill.Add(function (player} {
-	++player.Properties.Kills.Value;
+    ++player.Properties.Kills.Value;
 });
 
 var defView = AreaViewService.GetContext().Get("BlueFlagView");
