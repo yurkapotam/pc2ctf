@@ -105,7 +105,7 @@ defTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defiTrigger.Enable = true;
         defiView.Enable = true;
-        player.Properties.Get("Score").Value += 1;
+        player.Properties.Score.Value += 1;
     }
 });
 defTrigger.Enable = true;
@@ -128,7 +128,7 @@ defiTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defTrigger.Enable = true;
         defView.Enable = true;
-        player.Properties.Get("Score").Value += 1;
+        player.Properties.Score.Value += 1;
     }
 });
 defiTrigger.Enable = true;
