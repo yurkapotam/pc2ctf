@@ -40,7 +40,7 @@ LeaderBoard.TeamLeaderBoardValue = {
     DisplayName: "Счёт",
     ShortDisplayName: "Счёт"
 };
-/*LeaderBoard.PlayersWeightGetter.Set(function(player) {
+LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Get("Kills").Value;
 });
 
@@ -82,7 +82,7 @@ Damage.OnKill.Add(function (player} {
     ++player.Properties.Kills.Value;
 });
 
-var defView = AreaViewService.GetContext().Get("BlueFlagView");
+/*var defView = AreaViewService.GetContext().Get("BlueFlagView");
 defView.color={b:1};
 defView.Enable = true;
 
