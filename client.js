@@ -18,7 +18,7 @@ Inventory.GetContext().Melee.Value = true;
 Inventory.GetContext().Explosive.Value = true;
 if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;*/
 
-/*LeaderBoard.PlayerLeaderBoardValues = [
+LeaderBoard.PlayerLeaderBoardValues = [
     {
         Value: "Kills",
         DisplayName: "Фраги",
@@ -33,13 +33,18 @@ if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().
         Value: "FlagCarrier",
         DisplayName: "Носитель флага",
         ShortDisplayName: "Носитель флага"
+    },
+    {
+        Value: "Score",
+        DisplayName: "Счёт",
+        ShortDisplayName: "Счёт"
     }
 ];
 LeaderBoard.TeamLeaderBoardValue = {
     Value: "Score",
     DisplayName: "Счёт",
     ShortDisplayName: "Счёт"
-};*/
+};
 LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Kills.Value;
 });
