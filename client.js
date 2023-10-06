@@ -28,9 +28,9 @@ LeaderBoard.PlayerLeaderBoardValues = [
     }
 ];
 LeaderBoard.TeamLeaderBoardValue = {
-	Value: "Score",
-	DisplayName: "Счёт",
-	ShortDisplayName: "Счёт"
+    Value: "Score",
+    DisplayName: "Счёт",
+    ShortDisplayName: "Счёт"
 };
 LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Get("Kills").Value;
@@ -39,6 +39,8 @@ LeaderBoard.PlayersWeightGetter.Set(function(player) {
 Properties.OnTeamProperty.Add(function(context, value) {
     if (value.Name != "Score") return;
     if (GameMode.Parameters.GetBool("InfFlags") == true) return;
+    if (GameMode.Parameters.GetBool("IncreasedFlags") == true && value.Value <= 10) WinTeam(context.Team);
+    else if (GameMode.Parameters.GetBool("IncreasedFlags") == false && value.Value <= 3) WinTeam(context.Team);
 });
 
 Teams.OnRequestJoinTeam.Add(function(player, team) {
