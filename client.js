@@ -41,7 +41,7 @@ LeaderBoard.TeamLeaderBoardValue = {
     ShortDisplayName: "Счёт"
 };
 LeaderBoard.PlayersWeightGetter.Set(function(player) {
-    return player.Properties.Get("Kills").Value;
+    return player.Properties.Kills.Value;
 });
 
 Properties.OnTeamProperty.Add(function(context, value) {
@@ -60,7 +60,7 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
 });
 
 Damage.OnDeath.Add(function (player) {
-    ++player.Properties.Deaths.Value;
+    player.Properties.Deaths.Value += 1;
     if (player.Properties.Get("FlagCarrier").Value == true)
     {
         player.Properties.Get("FlagCarrier").Value = false;
@@ -79,7 +79,7 @@ Damage.OnDeath.Add(function (player) {
 });
 
 Damage.OnKill.Add(function (player} {
-    ++player.Properties.Kills.Value;
+    player.Properties.Kills.Value += 1;
 });
 
 /*var defView = AreaViewService.GetContext().Get("BlueFlagView");
