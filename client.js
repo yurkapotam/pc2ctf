@@ -36,6 +36,11 @@ LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Get("Kills").Value;
 });
 
+Properties.OnTeamProperty.Add(function(context, value) {
+    if (value.Name != "Score") return;
+    if (GameMode.Parameters.GetBool("InfFlags") == true) return;
+});
+
 Teams.OnRequestJoinTeam.Add(function(player, team) {
     team.Add(player);
 });
