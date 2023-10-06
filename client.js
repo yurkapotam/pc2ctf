@@ -32,6 +32,9 @@ LeaderBoard.TeamLeaderBoardValue = {
 	DisplayName: "Счёт",
 	ShortDisplayName: "Счёт"
 };
+LeaderBoard.PlayersWeightGetter.Set(function(player) {
+    return player.Properties.Get("Kills").Value;
+});
 
 Teams.OnRequestJoinTeam.Add(function(player, team) {
     team.Add(player);
@@ -47,6 +50,16 @@ Damage.OnDeath.Add(function (player) {
     {
         player.Properties.Get("FlagCarrier").Value = false;
         Ui.GetContext().Hint.Value = player.NickName + " потерял флаг";
+        if (player.Team == red)
+        {
+            defTrigger.Enable = true;
+            defView.Enable = true;
+        }
+        else if (player.Team == blue)
+        {
+            defiTrigger.Enable = true;
+            defiView.Enable = true;
+        }
     }
 });
 
@@ -78,7 +91,7 @@ defTrigger.OnEnter.Add(function(player) {
 defTrigger.Enable = true;
 
 var defiView = AreaViewService.GetContext().Get("BlueFlagView");
-defiView.color={b:1};
+defiView.color={r:1};
 defiView.Enable = true;
 
 var defiTrigger = AreaPlayerTriggerService.Get("BlueFlagTrigger");
