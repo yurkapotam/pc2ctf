@@ -12,39 +12,12 @@ blue.Spawns.SpawnPointsGroups.Add(1);
 blue.Properties.Get("Score").Value = 0;
 blue.Spawns.RespawnTime.Value = 0;
 
-/*Inventory.GetContext().Main.Value = true;
+Inventory.GetContext().Main.Value = true;
 Inventory.GetContext().Secondary.Value = true;
 Inventory.GetContext().Melee.Value = true;
 Inventory.GetContext().Explosive.Value = true;
-if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;*/
+if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;
 
-LeaderBoard.PlayerLeaderBoardValues = [
-    {
-        Value: "Kills",
-        DisplayName: "Фраги",
-        ShortDisplayName: "Фраги"
-    },
-    {
-        Value: "Deaths",
-        DisplayName: "Смерти",
-        ShortDisplayName: "Смерти"
-    },
-    {
-        Value: "FlagCarrier",
-        DisplayName: "Носитель флага",
-        ShortDisplayName: "Носитель флага"
-    },
-    {
-        Value: "Score",
-        DisplayName: "Счёт",
-        ShortDisplayName: "Счёт"
-    }
-];
-LeaderBoard.TeamLeaderBoardValue = {
-    Value: "Score",
-    DisplayName: "Счёт",
-    ShortDisplayName: "Счёт"
-};
 LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Kills.Value;
 });
@@ -87,7 +60,7 @@ Damage.OnKill.Add(function (player} {
     player.Properties.Kills.Value += 1;
 });
 
-/*var defView = AreaViewService.GetContext().Get("BlueFlagView");
+var defView = AreaViewService.GetContext().Get("BlueFlagView");
 defView.color={b:1};
 defView.Enable = true;
 
@@ -131,4 +104,4 @@ defiTrigger.OnEnter.Add(function(player) {
         player.Properties.Score.Value += 1;
     }
 });
-defiTrigger.Enable = true;*/
+defiTrigger.Enable = true;
