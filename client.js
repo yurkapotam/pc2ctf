@@ -40,7 +40,7 @@ LeaderBoard.TeamLeaderBoardValue = {
     DisplayName: "Счёт",
     ShortDisplayName: "Счёт"
 };
-LeaderBoard.PlayersWeightGetter.Set(function(player) {
+/*LeaderBoard.PlayersWeightGetter.Set(function(player) {
     return player.Properties.Get("Kills").Value;
 });
 
@@ -127,3 +127,4 @@ defiTrigger.OnEnter.Add(function(player) {
     }
 });
 defiTrigger.Enable = true;
+*/
