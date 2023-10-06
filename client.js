@@ -4,11 +4,13 @@ Teams.Add("Red", "Teams/Red", {r: 1});
 var red = Teams.Get("Red");
 red.Spawns.SpawnPointsGroups.Add(2);
 red.Properties.Get("Score").Value = 0;
+red.Spawns.RespawnTime.Value = 0;
 
 Teams.Add("Blue", "Teams/Blue", {b: 1});
 var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
 blue.Properties.Get("Score").Value = 0;
+blue.Spawns.RespawnTime.Value = 0;
 
 Inventory.GetContext().Main.Value = true;
 Inventory.GetContext().Secondary.Value = true;
