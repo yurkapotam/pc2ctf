@@ -1,3 +1,5 @@
+try {
+
 Damage.FriendlyFire = GameMode.Parameters.GetBool("FriendlyFire");
 
 Teams.Add("Red", "Teams/Red", {r: 1});
@@ -18,9 +20,6 @@ Inventory.GetContext().Melee.Value = true;
 Inventory.GetContext().Explosive.Value = true;
 if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;
 
-LeaderBoard.PlayersWeightGetter.Set(function(player) {
-    return player.Properties.Kills.Value;
-});
 
 Properties.OnTeamProperty.Add(function(context, value) {
     if (value.Name != "Score") return;
@@ -105,3 +104,7 @@ defiTrigger.OnEnter.Add(function(player) {
     }
 });
 defiTrigger.Enable = true;
+}
+catch (error) {
+    Ui.GetContext().Hint.Value = "Произошла ошибка: " + error.toString();
+}
