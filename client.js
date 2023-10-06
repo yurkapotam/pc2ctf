@@ -3,10 +3,12 @@ Damage.FriendlyFire = GameMode.Parameters.GetBool("FriendlyFire");
 Teams.Add("Red", "Teams/Red", {r: 1});
 var red = Teams.Get("Red");
 red.Spawns.SpawnPointsGroups.Add(2);
+red.Properties.Get("Score").Value = 0;
 
 Teams.Add("Blue", "Teams/Blue", {b: 1});
 var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
+blue.Properties.Get("Score").Value = 0;
 
 LeaderBoard.PlayerLeaderBoardValues = [
     {
@@ -25,6 +27,11 @@ LeaderBoard.PlayerLeaderBoardValues = [
         ShortDisplayName: "Носитель флага"
     }
 ];
+LeaderBoard.TeamLeaderBoardValue = {
+	Value: "Score",
+	DisplayName: "Счёт",
+	ShortDisplayName: "Счёт"
+};
 
 Teams.OnRequestJoinTeam.Add(function(player, team) {
     team.Add(player);
@@ -36,6 +43,11 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
 
 Damage.OnDeath.Add(function (player) {
     ++player.Properties.Deaths.Value;
+    if (player.Properties.Get("FlagCarrier").Value == true)
+    {
+        player.Properties.Get("FlagCarrier").Value = false;
+        Ui.GetContext().Hint.Value = player.NickName + " потерял флаг";
+    }
 });
 
 Damage.OnKill.Add(function (player} {
@@ -60,6 +72,7 @@ defTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defiTrigger.Enable = true;
         defiView.Enable = true;
+        ++blue.Properties.Get("Score").Value;
     }
 });
 defTrigger.Enable = true;
@@ -82,6 +95,7 @@ defiTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defTrigger.Enable = true;
         defView.Enable = true;
+        ++red.Properties.Get("Score").Value;
     }
 });
 defiTrigger.Enable = true;
