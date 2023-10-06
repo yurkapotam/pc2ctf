@@ -10,6 +10,12 @@ var blue = Teams.Get("Blue");
 blue.Spawns.SpawnPointsGroups.Add(1);
 blue.Properties.Get("Score").Value = 0;
 
+Inventory.GetContext().Main.Value = true;
+Inventory.GetContext().Secondary.Value = true;
+Inventory.GetContext().Melee.Value = true;
+Inventory.GetContext().Explosive.Value = true;
+if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;
+
 LeaderBoard.PlayerLeaderBoardValues = [
     {
         Value: "Kills",
