@@ -1,5 +1,3 @@
-try {
-
 Damage.FriendlyFire = GameMode.Parameters.GetBool("FriendlyFire");
 
 Teams.Add("Red", "Teams/Red", {r: 1});
@@ -104,7 +102,3 @@ defiTrigger.OnEnter.Add(function(player) {
     }
 });
 defiTrigger.Enable = true;
-}
-catch (error) {
-    Ui.GetContext().Hint.Value = "Произошла ошибка: " + error.toString();
-}
