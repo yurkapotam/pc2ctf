@@ -7,7 +7,10 @@
     "HasParcourEnd": false
   },
   "MapLists": [
-    
+    {
+      "MapListId": 11095,
+      "Name": "Карты для CTF"
+    }
   ],
   "Parameters": {
     "Bool": [
