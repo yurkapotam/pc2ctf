@@ -18,6 +18,23 @@ Inventory.GetContext().Melee.Value = true;
 Inventory.GetContext().Explosive.Value = true;
 if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;
 
+LeaderBoard.PlayerLeaderBoardValues = [
+    {
+        Value: "Kills",
+        DisplayName: "Фраги",
+        ShortDisplayName: "Фраги"
+    },
+    {
+        Value: "Deaths",
+        DisplayName: "Смерти",
+        ShortDisplayName: "Смерти"
+    },
+    {
+        Value: "FlagCarrier",
+        DisplayName: "Носитель флага",
+        ShortDisplayName: "Носитель флага"
+    }
+];
 
 Properties.OnTeamProperty.Add(function(context, value) {
     if (value.Name != "Score") return;
@@ -75,7 +92,6 @@ defTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defiTrigger.Enable = true;
         defiView.Enable = true;
-        player.Properties.Score.Value += 1;
     }
 });
 defTrigger.Enable = true;
@@ -98,7 +114,6 @@ defiTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = false;
         defTrigger.Enable = true;
         defView.Enable = true;
-        player.Properties.Score.Value += 1;
     }
 });
 defiTrigger.Enable = true;
