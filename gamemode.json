@@ -13,7 +13,15 @@
     "Bool": [
       {
         "Name": "FriendlyFire",
-        "DisplayName": "GmParams/FriendlyFire"
+        "DisplayName": "Огонь по своим"
+      },
+      {
+        "Name": "IncreasedFlags",
+        "DisplayName": "Увеличенный лимит счёта"
+      },
+      {
+        "Name": "InfFlags",
+        "DisplayName": "Бесконечный счёт"
       }
     ]
   }
