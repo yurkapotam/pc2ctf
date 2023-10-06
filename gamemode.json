@@ -22,6 +22,10 @@
       {
         "Name": "InfFlags",
         "DisplayName": "Бесконечный счёт"
+      },
+      {
+        "Name": "BuildAllowed",
+        "DisplayName": "Постройка"
       }
     ]
   }
