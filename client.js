@@ -79,7 +79,7 @@ Damage.OnKill.Add(function (player} {
     player.Properties.Kills.Value += 1;
 });
 
-var defView = AreaViewService.GetContext().Get("BlueFlagView");
+/*var defView = AreaViewService.GetContext().Get("BlueFlagView");
 defView.color={b:1};
 defView.Enable = true;
 
@@ -121,7 +121,7 @@ defiTrigger.OnEnter.Add(function(player) {
         defView.Enable = true;
     }
 });
-defiTrigger.Enable = true;
+defiTrigger.Enable = true;*/
 
 function WinTeam(team)
 {
