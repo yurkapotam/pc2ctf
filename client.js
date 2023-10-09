@@ -51,7 +51,7 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
     player.Spawns.Spawn();
 });
 
-Damage.OnDeath.Add(function (player) {
+/*Damage.OnDeath.Add(function (player) {
     player.Properties.Deaths.Value += 1;
     if (player.Properties.Get("FlagCarrier").Value == true)
     {
@@ -68,7 +68,7 @@ Damage.OnDeath.Add(function (player) {
             defiView.Enable = true;
         }
     }
-});
+});*/
 
 Damage.OnKill.Add(function (player} {
     player.Properties.Kills.Value += 1;
