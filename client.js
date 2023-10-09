@@ -16,7 +16,7 @@ Inventory.GetContext().Main.Value = true;
 Inventory.GetContext().Secondary.Value = true;
 Inventory.GetContext().Melee.Value = true;
 Inventory.GetContext().Explosive.Value = true;
-if (GameMode.Parameters.GetBool("BuildAllowed") == true) Inventory.GetContext().Build.Value = true;
+Inventory.GetContext().Build.Value = GameMode.Parameters.GetBool("BuildAllowed");
 
 LeaderBoard.PlayerLeaderBoardValues = [
     {
@@ -36,9 +36,9 @@ LeaderBoard.PlayerLeaderBoardValues = [
     }
 ];
 LeaderBoard.TeamLeaderBoardValue = {
-	Value: "Score",
-	DisplayName: "Счёт",
-	ShortDisplayName: "Счёт"
+    Value: "Score",
+    DisplayName: "Счёт",
+    ShortDisplayName: "Счёт"
 };
 
 Properties.OnTeamProperty.Add(function(context, value) {
