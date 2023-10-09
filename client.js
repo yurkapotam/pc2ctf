@@ -35,6 +35,11 @@ LeaderBoard.PlayerLeaderBoardValues = [
         ShortDisplayName: "Носитель флага"
     }
 ];
+LeaderBoard.TeamLeaderBoardValue = {
+	Value: "Score",
+	DisplayName: "Счёт",
+	ShortDisplayName: "Счёт"
+};
 
 Properties.OnTeamProperty.Add(function(context, value) {
     if (value.Name != "Score") return;
