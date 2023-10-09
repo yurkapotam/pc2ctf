@@ -85,7 +85,7 @@ defTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = true;
         defTrigger.Enable = false;
         defView.Enable = false;
-        Ui.GetContext().Hint.Value = "Синий флаг захватили!\nНоситель: " + player.NickName;
+        Ui.GetContext().Hint.Value = "Синий флаг захватили! Носитель: " + player.NickName;
     }
     else if (player.Team == blue && player.Properties.Get("FlagCarrier").Value == true)
     {
@@ -107,7 +107,7 @@ defiTrigger.OnEnter.Add(function(player) {
         player.Properties.Get("FlagCarrier").Value = true;
         defiTrigger.Enable = false;
         defiView.Enable = false;
-        Ui.GetContext().Hint.Value = "Красный флаг захватили!\nНоситель: " + player.NickName;
+        Ui.GetContext().Hint.Value = "Красный флаг захватили! Носитель: " + player.NickName;
     }
     else if (player.Team == red && player.Properties.Get("FlagCarrier").Value == true)
     {
