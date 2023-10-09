@@ -39,8 +39,8 @@ LeaderBoard.PlayerLeaderBoardValues = [
 Properties.OnTeamProperty.Add(function(context, value) {
     if (value.Name != "Score") return;
     if (GameMode.Parameters.GetBool("InfFlags") == true) return;
-    if (GameMode.Parameters.GetBool("IncreasedFlags") == true && value.Value <= 10) WinTeam(context.Team);
-    else if (GameMode.Parameters.GetBool("IncreasedFlags") == false && value.Value <= 3) WinTeam(context.Team);
+    if ((GameMode.Parameters.GetBool("IncreasedFlags") == true) && (value.Value <= 10)) WinTeam(context.Team);
+    else if ((GameMode.Parameters.GetBool("IncreasedFlags") == false) && (value.Value <= 3)) WinTeam(context.Team);
 });
 
 Teams.OnRequestJoinTeam.Add(function(player, team) {
@@ -51,7 +51,7 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
     player.Spawns.Spawn();
 });
 
-/*Damage.OnDeath.Add(function (player) {
+Damage.OnDeath.Add(function (player) {
     player.Properties.Deaths.Value += 1;
     if (player.Properties.Get("FlagCarrier").Value == true)
     {
@@ -68,7 +68,7 @@ Teams.OnPlayerChangeTeam.Add(function(player) {
             defiView.Enable = true;
         }
     }
-});*/
+});
 
 Damage.OnKill.Add(function (player} {
     player.Properties.Kills.Value += 1;
@@ -117,3 +117,8 @@ defiTrigger.OnEnter.Add(function(player) {
     }
 });
 defiTrigger.Enable = true;
+
+function WinTeam(team)
+{
+
+}
